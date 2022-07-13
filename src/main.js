@@ -41,7 +41,7 @@ Vue.config.productionTip = false;
 Vue.use(VueProgressBar, {
     color: "#CA226B",
     failedColor: "red",
-    height: "10%",
+    height: "50%",
 });
 
 // router.beforeEach((to, from, next) => {

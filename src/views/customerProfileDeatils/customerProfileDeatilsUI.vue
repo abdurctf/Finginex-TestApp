@@ -1,6 +1,6 @@
 <template>
   <base-material-card>
-  <!--why write template again?-->
+  <!--why write template again?  for the v-0slot-->
   <template v-slot:heading>
     <v-row class="row-page-header-margin">
     <v-col cols="12" md="4" class="headline">Customer Page</v-col>
@@ -137,10 +137,12 @@
             v-on="on"
             label="Mother Name"
             v-model="customerprofiledata.mother_name"
-            :rules="[elementaryRules.maxLengthWithoutRequired(40)]"
+            :rules="[...elementaryRules.required,
+                          ...elementaryRules.maxLength(50),
+                        ]"
             ></v-text-field>
             </template>
-            <span>Maximum Length 40</span>
+            <span>Maximum Length 50</span>
           </v-tooltip>
 
         </v-col>
@@ -187,7 +189,9 @@
                         v-on="on"
                         label="Spouse Name"
                         v-model="customerprofiledata.spouse_name"
-                        :rules="[elementaryRules.maxLengthWithoutRequired(50)]"
+                        :rules="[...elementaryRules.required,
+                          ...elementaryRules.maxLength(50),
+                        ]"
                       ></v-text-field>
                     </template>
                     <span>Maximum Length 50</span>
@@ -201,10 +205,10 @@
                         v-on="on"
                         label="NID"
                         v-model="customerprofiledata.nid"
-                        :rules="[elementaryRules.maxLengthWithoutRequired(20)]"
+                        :rules="[elementaryRules.maxLengthWithoutRequired(13)]"
                       ></v-text-field>
                     </template>
-                    <span>Maximum Length 20</span>
+                    <span>Maximum Length 13</span>
                  </v-tooltip>
                 </v-col>
               </v-row>
@@ -274,12 +278,12 @@ export default {
       branchId: "0031",
       branchName: "",
       isFormValid: false,
-      elementaryRules: elementaryRules,//why are we writing this?
+      elementaryRules: elementaryRules,//why are we writing this? for using them in the template
       compositeRules: compositeRules,
       Get_Padded_Customer_Id: Get_Padded_Customer_Id,
       transDate: new Date(),
       isOld: false,
-      isNew: true,//why is one set true whereas the other false
+      isNew: true,//why is one set true whereas the other false//default conditions applicable for this program
       IntroducerInfoTab:'IntroducerInfoTab',
       AddressListTab:'AddressListTab',
 
@@ -325,7 +329,7 @@ export default {
       if(this.stringIsEmptyOrNullCheck(this.customerprofiledata.customer_id)){
         return;
       }else{
-        await this.GetCustomerProfileDetailsById();
+         this.GetCustomerProfileDetailsById();
       }
       },
       async GetCustomerProfileDetailsById(){
@@ -432,6 +436,7 @@ export default {
     },
     onRefresh() {
       this.$store.commit("resetcustomerprofileinfo");
+      //this.router.go is what causes the page to reload on refresh
       this.$router.go();      
       this.$refs.customerForm.reset();
       this.customerModal = false;

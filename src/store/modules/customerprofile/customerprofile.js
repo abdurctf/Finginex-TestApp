@@ -62,8 +62,8 @@ const mutations = {
     setcustomerprofileinfo(state, customerinfo) {
         state.customerprofileinfo = customerinfo;
     },
-    resetcustomerprofileinfo(state, customerinfo) {
-        state.customerprofiledata = { ...customerinfo };
+    resetcustomerprofileinfo(state) {
+        state.customerprofileinfo = { ...customerprofiledata };
 
     }
 

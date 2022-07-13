@@ -6,6 +6,7 @@
         <v-col cols="9" md="7">
           <a v-on:click="redirectToHomeApp(HomeApplication)">
             <v-img src="@/assets/images/module/leads.png" height="100"> </v-img>
+            
           </a>
         </v-col>
       </v-row>

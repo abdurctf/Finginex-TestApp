@@ -91,10 +91,10 @@
                   v-on="on"
                   label="Phone No"
                   v-model="addressData.phone"
-                  :rules="[elementaryRules.maxLengthWithoutRequired(200)]"
+                  :rules="[elementaryRules.maxLengthWithoutRequired(11)]"
                 ></v-text-field>
               </template>
-              <span>Maximum Length 200</span>
+              <span>Maximum Length 11</span>
             </v-tooltip>
           </v-col>
           <v-col cols="12" md="3" sm="6">
@@ -105,10 +105,10 @@
                   v-on="on"
                   label="Mobile No"
                   v-model="addressData.mobile"
-                  :rules="[elementaryRules.maxLengthWithoutRequired(200)]"
+                  :rules="[elementaryRules.maxLengthWithoutRequired(11)]"
                 ></v-text-field>
               </template>
-              <span>Maximum Length 200</span>
+              <span>Maximum Length 11</span>
             </v-tooltip>
           </v-col>
           <v-col cols="12" md="3" sm="6">
@@ -119,10 +119,10 @@
                   v-on="on"
                   label="Email"
                   v-model="addressData.email"
-                  :rules="[elementaryRules.maxLengthWithoutRequired(200)]"
+                  :rules="[elementaryRules.maxLengthWithoutRequired(20)]"
                 ></v-text-field>
               </template>
-              <span>Maximum Length 200</span>
+              <span>Maximum Length 20</span>
             </v-tooltip>
           </v-col>
         </v-row>

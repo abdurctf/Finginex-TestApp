@@ -123,10 +123,10 @@
                     customerprofiledata.Obj_Customer_Introducer
                       .introducer_details
                   "
-                  :rules="[elementaryRules.maxLengthWithoutRequired(200)]"
+                  :rules="[elementaryRules.maxLengthWithoutRequired(20)]"
                 ></v-text-field>
               </template>
-              <span>Maximum Length 200</span>
+              <span>Maximum Length 20</span>
             </v-tooltip>
           </v-col>
         </v-row>
