@@ -8,7 +8,7 @@ import ModuleHomePage from "@/views/ModuleHomePage.vue";
 //at first import here then add the path name component below
 import customerprofile from "@/views/customerprofile/customerprofileUI.vue"
 import customerProfileDeatilsUI from "@/views/customerProfileDeatils/customerProfileDeatilsUI.vue";
-
+import customerprofilewithnft from "@/views/customerprofilewithnft/customerprofilewithnftUI.vue";
 
 
 import NotFound from "@/views/404.vue";
@@ -37,7 +37,19 @@ const routes = [{
         meta: {
             requiresAuth: false, // all children will need authentication too
         },
+
     },
+
+    {
+        path: "/customerprofilewithnftUI",
+        name: "customerprofilewithnftUI",
+        component: customerprofilewithnft,
+        meta: {
+            requiresAuth: false, // all children will need authentication too
+        },
+
+    },
+
 
     
     {
@@ -58,11 +70,8 @@ const routes = [{
                 name: "CustomerProfile",
                 component: customerprofile,  
             }, 
-            {
-                path: "customerProfileDeatilsUI",
-                name: "customerProfileDeatils",
-                component: customerProfileDeatilsUI,
-        },
+            
+       
             
             
         ],
