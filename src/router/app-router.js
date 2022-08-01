@@ -70,7 +70,11 @@ const routes = [{
                 name: "CustomerProfile",
                 component: customerprofile,  
             }, 
-            
+            {
+                path: "customerProfileDeatilsUI",
+                name: "customerProfileDeatils",
+                component: customerProfileDeatilsUI,
+        },
        
             
             

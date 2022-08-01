@@ -229,7 +229,7 @@ export default {
   components: {
     "button-component-text": ViewOKButton,
     "button-component-editview": EditDeleteViewButton,
-    // customerModal,
+    
   },
   data() {
     return {
@@ -329,7 +329,6 @@ onlyNumber: onlyNumber,
         this.father_name = this.DataFromAPI.father_name;
         this.mother_name = this.DataFromAPI.mother_name;
         this.gender = this.DataFromAPI.gender;
-        
         this.date_of_birth = this.DataFromAPI.date_of_birth;
         this.marital_status = this.DataFromAPI.marital_status;
         this.spouse_name = this.DataFromAPI.spouse_name;
