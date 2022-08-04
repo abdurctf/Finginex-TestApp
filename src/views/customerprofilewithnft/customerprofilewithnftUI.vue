@@ -82,7 +82,7 @@
                         v-model="customer_name"
                         :rules="[
                           ...elementaryRules.required,
-                          ...elementaryRules.maxLength(100),
+                          ...elementaryRules.maxLength(30),
                         ]"
                         ><template #label>
                           <span class="red--text"><strong>* </strong></span
@@ -382,7 +382,7 @@ onlyNumber: onlyNumber,
           this.SaveAPIBody.data.BusinessData.isAdd = true;
           this.SaveAPIBody.data.BusinessData.isDelete = false;
 
-          //this.SaveAPIBody.data.BusinessData.LAST_ACTION = "ADD";
+         
 
           this.fillBodyData();
           this.onSaveAPICall();
@@ -434,7 +434,6 @@ onlyNumber: onlyNumber,
         this.SaveAPIBody.data.BusinessData.MAKE_DT = this.transDate;
         this.SaveAPIBody.data.BusinessData.LAST_ACTION = "ADD";
       } else if (!this.isNew && this.isOld) {
-       //this.SaveAPIBody.data.BusinessData.MAKE_BY = this.userId;
         this.SaveAPIBody.data.BusinessData.LAST_ACTION = "EDT";
       }
     },

@@ -39,7 +39,7 @@ var elementaryRules = {
     onlyNumericWithoutRequired: (v) => v === null || v === '' || v === undefined || /^[0-9]+$/.test(v) || "must contain only numeric characters",
     emailValidityWithoutRequired: (v) => v === null || v === '' || v === undefined || /^.+@.+\..+$/.test(v) || "E-mail has to contain @ and .",
     maxLengthWithoutRequired(len) {
-        return v => v === null || v === '' || v === undefined || v.length === len || 'maximum ' + len.toString() + ' characters';
+        return v => v === null || v === '' || v === undefined || v.length < len || 'maximum ' + len.toString() + ' characters';
     }
 }
 var compositeRules = {
